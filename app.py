@@ -23,7 +23,7 @@ def clean_text(text):
     return text.lower()
 
 def preprocess(text):
-    tokens = word_tokenize(text)
+    tokens = text.split()
     tokens = [t for t in tokens if t not in stop_words]
     tokens = [lemmatizer.lemmatize(t, pos=wordnet.VERB) for t in tokens]
     return " ".join(tokens)
